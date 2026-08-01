@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LenderController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\LoanPaymentController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,4 +21,5 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('/loan', LoanController::class);
     Route::resource('/loanPayment', LoanPaymentController::class);
     Route::get('/loanPayment/get-lender-loan/{lender}', [LoanPaymentController::class,'getLenderLoan'])->name('loanPayment.getLenderLoan');
+    Route::resource('/transaction', TransactionController::class);
 });

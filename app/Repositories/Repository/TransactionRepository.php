@@ -75,7 +75,7 @@ class TransactionRepository implements TransactionInterface
             DB::beginTransaction();
 
             $transaction->update([
-                'type' => $data['transaction'] ?? $transaction->type,
+                'type' => $data['type'] ?? $transaction->type,
                 'amount' => $data['amount'] ?? $transaction->amount,
                 'transactionDate' => $data['transactionDate'] ?? $transaction->transactionDate,
                 'description' => $data['description'] ?? $transaction->description

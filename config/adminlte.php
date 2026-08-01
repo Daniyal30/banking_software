@@ -339,6 +339,11 @@ return [
             'icon' => 'fas fa-money-check-alt',
         ],
 
+        [
+            'text' => 'Transaction',
+            'url' => 'admin/transaction',
+            'icon' => 'fas fa-exchange-alt',
+        ]
 
     ],
 

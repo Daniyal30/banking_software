@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreTransactionRequest extends FormRequest
 {
@@ -12,7 +14,7 @@ class StoreTransactionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +25,27 @@ class StoreTransactionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'type' => 'required|in:credit,debit',
+            'amount' => 'required|numeric',
+            'transactionDate' => 'required|date',
+            'description' => 'nullable'
         ];
+    }
+
+    /**
+     * Get the validation errors.
+     * @param \Illuminate\Contracts\Validation\Validator $validator
+     * @return void
+     * @throws \Illuminate\Http\Exceptions\HttpResponseException
+     */
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(
+            response()->json([
+                'success' => false,
+                'message' => 'Validation Errors',
+                'errors' => $validator->errors()
+            ], 422)
+        );
     }
 }

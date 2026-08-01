@@ -1,12 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'Lender Details')
+@section('title', 'Loan Payment Details')
 
 @section('content')
 
     <div class="pt-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4>Lender Details</h4>
+            <h4>Loan Payment Details</h4>
             <div>
                 <a href="{{ route('loanPayment.edit', $loanPayment->id) }}" class="btn btn-warning">Edit</a>
                 <a href="{{ route('loanPayment.index') }}" class="btn btn-primary">Back</a>

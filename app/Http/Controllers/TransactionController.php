@@ -99,7 +99,7 @@ class TransactionController extends Controller
      * @param Transaction $transaction
      * @return JsonResponse
      */
-    public function update(Request $request, Transaction $transaction): JsonResponse
+    public function update(UpdateTransactionRequest $request, Transaction $transaction): JsonResponse
     {
         try {
 

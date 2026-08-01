@@ -131,7 +131,7 @@ class LoanPaymentController extends Controller
             $this->loanPaymentRepository->destroy($loanPayment);
             return response()->json([
                 'status' => true,
-                'message' => 'Loan Payment Successfully'
+                'message' => 'Loan Payment Deleted Successfully'
             ], JsonResponse::HTTP_OK);
         } catch (\Throwable $th) {
             return response()->json([

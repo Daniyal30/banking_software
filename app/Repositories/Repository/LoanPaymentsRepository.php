@@ -100,9 +100,10 @@ class LoanPaymentsRepository implements LoanPaymentInterface
 
             $loanPayment->delete();
 
+            DB::commit();
+            
             return $loanPayment;
 
-            DB::commit();
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;
