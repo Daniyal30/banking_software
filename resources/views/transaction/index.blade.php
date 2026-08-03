@@ -47,7 +47,7 @@
                                 <tr>
                                     <td class="text-center text-muted">{{ ++$i }}</td>
                                     <td class="fw-semibold">{{ $transaction->type }}</td>
-                                    <td>{{ $transaction->amount }}</td>
+                                    <td>{{ number_format($transaction->amount) }}</td>
                                     <td>{{ \Carbon\Carbon::parse($transaction->transactionDate)->format('d-m-Y') }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('transaction.show', $transaction->id) }}" class="btn btn-sm btn-outline-info" title="View">
