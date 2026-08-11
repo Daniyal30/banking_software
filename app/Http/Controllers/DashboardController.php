@@ -28,7 +28,7 @@ $totalDebit = Transaction::where('type', 'debit')->sum('amount');
         ));
     } catch (\Throwable $th) {
         \Log::error('Dashboard error: ' . $th->getMessage()); // temporarily add ye line
-        dd($th->getMessage()); // asal error dekhne ke liye, temporarily add karein
+        dd($th->getMessage());
     }
     }
 }

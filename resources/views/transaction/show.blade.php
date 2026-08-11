@@ -32,8 +32,8 @@
                 <td>{{ \Carbon\Carbon::parse($transaction->transactionDate)->format('d-m-Y') }}</td>
             </tr>
             <tr>
-                <th>Notes</th>
-                <td>{{ $transaction->notes ?? 'N/A' }}</td>
+                <th>Description</th>
+                <td>{{ $transaction->description ?? 'N/A' }}</td>
             </tr>
 
         </table>
