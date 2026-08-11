@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center mt-3">
+        <div class="d-flex justify-content-between mt-3">
             {{ $loanPayments->links() }}
         </div>
     </div>
